@@ -8,18 +8,21 @@ import unitins.repository.PaieroRepository;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
+import jakarta.ws.rs.PUT;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
 
 @Path("/paieros")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-public class PaieroResource{
-    
+public class PaieroResource {
+
     @Inject
     PaieroRepository repository;
 
@@ -51,5 +54,26 @@ public class PaieroResource{
     @Path("/search/nome/{nome}")
     public List<Paiero> findByNome(@PathParam("nome") String nome) {
         return repository.findByNome(nome);
+    }
+
+    @PUT
+    @Path("/{id}")
+    @Transactional
+    public Response update(@PathParam("id") Long id, Paiero paiero) {
+        Paiero p = repository.findById(id);
+
+        p.setNome(paiero.getNome());
+        p.setMarca(paiero.getMarca());
+        p.setSabor(paiero.getSabor());
+
+        return Response.ok(p).build();
+    }
+
+    @DELETE
+    @Path("/{id}")
+    @Transactional
+    public Response dalete(@PathParam("id") Long id) {
+        repository.deleteById(id);
+        return Response.noContent().build();
     }
 }

@@ -10,6 +10,6 @@ import jakarta.enterprise.context.ApplicationScoped;
 public class PaieroRepository implements PanacheRepository<Paiero>{
 
     public List<Paiero> findByNome(String nome) {
-        return find("UPPER(nome) LIKE UPPER(?1) ", "%"+nome+"%").list();
+        return find("UPPER(nome) LIKE UPPER(?1) ", "%"+nome.toUpperCase()+"%").list();
     }
 }
