@@ -3,6 +3,7 @@ package unitins.model;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 
 @Entity
@@ -11,8 +12,14 @@ public class Paiero {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(length = 60, nullable = false)
     private String nome;
+
+    @Column(length = 60, nullable = false)
     private String sabor;
+
+    @Column(length = 60, nullable = false)
     private String marca;
 
     
