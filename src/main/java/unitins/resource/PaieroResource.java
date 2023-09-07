@@ -2,8 +2,7 @@ package unitins.resource;
 
 import java.util.List;
 
-import unitins.model.Paiero;
-
+import unitins.model.paiero.Paiero;
 import unitins.repository.PaieroRepository;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
@@ -31,6 +30,8 @@ public class PaieroResource {
     public Paiero insert(Paiero paiero) {
         Paiero novoPaiero = new Paiero();
         novoPaiero.setNome(paiero.getNome());
+        novoPaiero.setDescricao(paiero.getDescricao());
+        novoPaiero.setQtdNoEstoque(paiero.getQtdNoEstoque());
         novoPaiero.setMarca(paiero.getMarca());
         novoPaiero.setSabor(paiero.getSabor());
 
@@ -63,6 +64,8 @@ public class PaieroResource {
         Paiero p = repository.findById(id);
 
         p.setNome(paiero.getNome());
+        p.setDescricao(paiero.getDescricao());
+        p.setQtdNoEstoque(paiero.getQtdNoEstoque());
         p.setMarca(paiero.getMarca());
         p.setSabor(paiero.getSabor());
 

@@ -2,9 +2,9 @@ package unitins.repository;
 
 import java.util.List;
 
-import unitins.model.Paiero;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import jakarta.enterprise.context.ApplicationScoped;
+import unitins.model.paiero.Paiero;
 
 @ApplicationScoped
 public class PaieroRepository implements PanacheRepository<Paiero>{
