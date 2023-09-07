@@ -18,23 +18,12 @@ public class Paiero extends DefaultEntity {
     @Column(length = 60, nullable = false)
     private String sabor;
 
-    @Column(length = 60, nullable = false)
-    private String marca;
-
     public String getSabor() {
         return sabor;
     }
 
     public void setSabor(String sabor) {
         this.sabor = sabor;
-    }
-
-    public String getMarca() {
-        return marca;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
     }
 
     public String getNome() {

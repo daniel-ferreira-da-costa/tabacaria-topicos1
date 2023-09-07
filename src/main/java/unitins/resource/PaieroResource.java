@@ -32,7 +32,6 @@ public class PaieroResource {
         novoPaiero.setNome(paiero.getNome());
         novoPaiero.setDescricao(paiero.getDescricao());
         novoPaiero.setQtdNoEstoque(paiero.getQtdNoEstoque());
-        novoPaiero.setMarca(paiero.getMarca());
         novoPaiero.setSabor(paiero.getSabor());
 
         repository.persist(novoPaiero);
@@ -66,7 +65,6 @@ public class PaieroResource {
         p.setNome(paiero.getNome());
         p.setDescricao(paiero.getDescricao());
         p.setQtdNoEstoque(paiero.getQtdNoEstoque());
-        p.setMarca(paiero.getMarca());
         p.setSabor(paiero.getSabor());
 
         return Response.ok(p).build();
