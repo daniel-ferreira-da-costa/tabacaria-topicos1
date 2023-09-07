@@ -2,7 +2,7 @@ package unitins.resource;
 
 import java.util.List;
 
-import unitins.model.paiero.Paiero;
+import unitins.model.Paiero;
 import unitins.repository.PaieroRepository;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;

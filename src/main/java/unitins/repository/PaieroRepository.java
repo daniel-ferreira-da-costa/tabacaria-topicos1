@@ -4,7 +4,7 @@ import java.util.List;
 
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import jakarta.enterprise.context.ApplicationScoped;
-import unitins.model.paiero.Paiero;
+import unitins.model.Paiero;
 
 @ApplicationScoped
 public class PaieroRepository implements PanacheRepository<Paiero>{
