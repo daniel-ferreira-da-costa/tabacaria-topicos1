@@ -9,7 +9,7 @@ public class Paiero extends DefaultEntity {
     @Column(length = 60, nullable = false)
     private String nome;
 
-    @Column(length = 60, nullable = false)
+    @Column(length = 200, nullable = false)
     private String descricao;
 
     @Column(nullable = false)
