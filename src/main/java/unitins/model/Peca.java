@@ -1,9 +1,11 @@
 package unitins.model;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
+@Entity
 public class Peca extends DefaultEntity{
     @Column(length = 60, nullable = false)
     private String nome;
@@ -19,5 +21,5 @@ public class Peca extends DefaultEntity{
 
     @JoinColumn(name = "id_narguile", nullable = true)
     @ManyToOne
-    private Narguile pertenceAoNarguile;
+    private Produto pertenceAoNarguile;
 }

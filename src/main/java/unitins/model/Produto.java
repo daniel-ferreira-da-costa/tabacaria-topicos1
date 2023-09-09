@@ -1,8 +1,10 @@
 package unitins.model;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 
-public class Narguile extends DefaultEntity {
+@Entity
+public class Produto extends DefaultEntity {
     @Column(length = 60, nullable = false)
     private String nome;
 

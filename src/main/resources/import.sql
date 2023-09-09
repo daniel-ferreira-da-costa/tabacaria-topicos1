@@ -6,3 +6,4 @@ INSERT INTO paiero (nome, descricao, qtdNoEstoque, sabor)VALUES ('Caderno','Desf
 INSERT INTO paiero (nome, descricao, qtdNoEstoque, sabor) VALUES ('Diario','Desfrute do sabor da GreenGator Morango', 50, 'Morango');
 INSERT INTO paiero (nome, descricao, qtdNoEstoque, sabor) VALUES ('Prova do Enem','Desfrute do sabor da GreenGator Limão', 50, 'Limão');
 INSERT INTO paiero (nome, descricao, qtdNoEstoque, sabor) VALUES ('Pipa','Desfrute do sabor da GreenGator Menta', 50, 'Menta');
+
