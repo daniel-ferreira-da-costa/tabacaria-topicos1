@@ -21,5 +21,5 @@ public class Peca extends Produto{
 
     @JoinColumn(name = "id_narguile", nullable = true)
     @ManyToOne
-    private Produto pertenceAoNarguile;
+    private Narguile pertenceAoNarguile;
 }
