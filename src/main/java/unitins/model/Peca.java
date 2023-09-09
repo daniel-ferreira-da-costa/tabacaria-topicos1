@@ -6,7 +6,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 @Entity
-public class Peca extends DefaultEntity{
+public class Peca extends Produto{
     @Column(length = 60, nullable = false)
     private String nome;
 
