@@ -1,9 +1,10 @@
 package unitins.dto;
 
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+import unitins.model.Tamanho;
 
-public record PaieroDTO(
+public record PecaDTO (
+
     @NotBlank(message = "O campo nome deve ser informado.")
     String nome,
 
@@ -13,9 +14,9 @@ public record PaieroDTO(
     @NotBlank(message = "O campo quantidade no estoque deve ser informado.")
     int qtdNoEstoque,
 
-    @NotBlank(message = "O campo sabor deve ser informado.")
-    String sabor,
+    @NotBlank(message = "O campo valor deve ser informado.")
+    float valor,
 
-    @NotNull(message = "O campo idPaiero deve ser informado.")
-    Long idPaiero
-    ) {}
+    @NotBlank(message = "O campo tamanho narguile compativel deve ser informado.")
+    Tamanho TamanhoNarguileCompativel
+){ }

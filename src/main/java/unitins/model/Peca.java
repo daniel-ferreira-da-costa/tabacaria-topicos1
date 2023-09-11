@@ -12,6 +12,6 @@ public class Peca extends Produto{
     @ManyToOne
     private Narguile pertenceAoNarguile;
 
-    @Column(name = "narguile_compativel", nullable = false)
+    @Column(name = "tamanho_narguile_compativel", nullable = false)
     private Tamanho TamanhoNarguileCompativel;
 }
