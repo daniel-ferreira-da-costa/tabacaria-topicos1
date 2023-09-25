@@ -1,0 +1,85 @@
+@startuml Tabacaria
+'========Produto========='
+class Produto {
+    - id: Long
+    - nome: String
+    - descricao: String
+    - preco: Double
+    - valor: Double
+    - qtdNoEstoque: Integer
+}
+
+enum Tipo {
+    - ACESSORIO: int
+    - ESSENCIA: int
+    - PAIERO: int
+    - PECA: int
+    - NARGUILE: int
+}
+
+'========Usuario========='
+class Usuario{
+    - id: Long
+    - senha: String
+    - login: String
+    - email: String
+}
+
+class Telefone {
+    - id: Long
+    - codigoArea: String
+    - numero: String
+}
+
+'========Venda========='
+class Compra {
+    - id: Long
+    - data: Date
+    - totalCompra: Double
+}
+
+class ItemCompra {
+    - id: Long
+    - quantidade: Integer
+    - preco: Double
+}
+
+'========Endereço========='
+class Endereco {
+    - id: Long
+    - principal: Boolean
+    - logradouro: String
+    - bairro: String
+    - numero: String
+    - complemento: String
+    - cep: String
+}
+class Estado{
+    - id: Long
+    - nome: String
+    - sigla: String
+}
+
+class Cidade{
+    - id: Long
+    - nome: String
+}
+
+'========Relacionamentos========='
+Produto "*" *--> "1" Tipo
+
+Compra "1" *--> "*" ItemCompra
+Compra "*" --> "1" Usuario
+Compra "*" --> "1" Endereco
+
+ItemCompra "*" --> "1" Produto
+
+Usuario "*" <--> "*" Produto: listaDesejo
+Usuario "1" *--> "1" Telefone: Ligacao
+Usuario "1" *--> "1" Telefone: WhatsApp
+Usuario "1" *--> "*" Endereco
+
+Endereco "*" *--> "1" Cidade
+Cidade "*" *--> "1" Estado
+
+@enduml

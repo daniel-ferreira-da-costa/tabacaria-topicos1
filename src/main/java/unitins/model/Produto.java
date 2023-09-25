@@ -1,25 +1,11 @@
 package unitins.model;
 
 import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.Entity;
 
-@MappedSuperclass
-public abstract class Produto {
+@Entity
+public class Produto extends DefaultEntity{
     
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;  
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
     @Column(length = 60, nullable = false)
     private String nome;
 
@@ -27,12 +13,18 @@ public abstract class Produto {
     private int qtdNoEstoque;
 
     @Column(nullable = false)
-    private float valor;
+    private double valor;
+    
+    @Column(nullable = false)
+    private double preco;
 
     @Column(length = 200, nullable = false)
     private String descricao;
 
+    @Column(nullable = true)
+    private Tipo tipo;
 
+    //get e set
     public String getNome() {
         return nome;
     }
@@ -49,12 +41,20 @@ public abstract class Produto {
         this.qtdNoEstoque = qtdNoEstoque;
     }
 
-    public float getValor() {
+    public double getValor() {
         return valor;
     }
 
-    public void setValor(float valor) {
+    public void setValor(double valor) {
         this.valor = valor;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
     }
 
     public String getDescricao() {
@@ -65,5 +65,15 @@ public abstract class Produto {
         this.descricao = descricao;
     }
 
-    
+    public Tipo getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(Tipo tipo) {
+        this.tipo = tipo;
+    }
+    public void setTipo(int tipo) {
+        this.tipo = Tipo.valueOf(tipo);
+    }
+
 }
