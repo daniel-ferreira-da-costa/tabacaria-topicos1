@@ -13,3 +13,29 @@ VALUES
     ('Mangueira Diamond Crush', 'A Mangueira Diamond Crush é um verdadeiro diamante entre as mangueiras de hookah. Com seu design luxuoso e ponta brilhante, ela combina estilo e funcionalidade. Desfrute de fumaça suave e refrescante enquanto adiciona um toque de glamour à sua sessão de narguilé.', 30, 24.99, 39.99),
     ('Bowl Fusion Rainbow', 'O Bowl Fusion Rainbow é a peça central perfeita para sua sessão de hookah. Sua construção de cerâmica de alta qualidade permite que você desfrute de sabores puros e intensos. Além disso, seu visual arco-íris adiciona um toque de cor e alegria à sua experiência de fumar.', 25, 14.99, 29.99);
 
+INSERT INTO telefone (codigoArea, numero) VALUES
+    ('63', '1111-1111'),
+    ('62', '2222-2222'),
+    ('61', '3333-3333'),
+    ('55', '4444-4444'),
+    ('63', '5555-5555'),
+    ('62', '6666-6666'),
+    ('61', '7777-7777'),
+    ('55', '8888-8888');
+INSERT INTO usuario (nome, login, senha) VALUES
+    ('Daniel', 'jacare', '333'),
+    ('Andre', 'bene', '444'),
+    ('Hirosh', 'labosta', '555'),
+    ('Giovanna', 'gih', '666');
+
+INSERT INTO usuario_telefone (id_usuario, id_telefone) VALUES
+    (1, 1),
+    (2, 2),  
+    (3, 3),  
+    (4, 4);
+
+INSERT INTO usuario_whatsapp (id_usuario, id_whatsapp) VALUES
+    (1, 5),
+    (2, 6),  
+    (3, 7),  
+    (4, 8);
