@@ -9,14 +9,6 @@ class Produto {
     - qtdNoEstoque: Integer
 }
 
-enum Tipo {
-    - ACESSORIO: int
-    - ESSENCIA: int
-    - PAIERO: int
-    - PECA: int
-    - NARGUILE: int
-}
-
 '========Usuario========='
 class Usuario{
     - id: Long
@@ -66,17 +58,13 @@ class Cidade{
 }
 
 '========Relacionamentos========='
-Produto "*" *--> "1" Tipo
-
 Compra "1" *--> "*" ItemCompra
 Compra "*" --> "1" Usuario
 Compra "*" --> "1" Endereco
 
 ItemCompra "*" --> "1" Produto
 
-Usuario "*" <--> "*" Produto: listaDesejo
-Usuario "1" *--> "1" Telefone: Ligacao
-Usuario "1" *--> "1" Telefone: WhatsApp
+Usuario "1" *--> "1" Telefone
 Usuario "1" *--> "*" Endereco
 
 Endereco "*" *--> "1" Cidade

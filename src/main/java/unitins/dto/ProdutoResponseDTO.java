@@ -1,7 +1,6 @@
 package unitins.dto;
 
 import unitins.model.Produto;
-import unitins.model.Tipo;
 
 public record ProdutoResponseDTO(
     Long id,
@@ -9,8 +8,7 @@ public record ProdutoResponseDTO(
     String descricao,
     double valor,
     double preco,
-    int qtdNoEstoque,
-    Tipo tipo
+    int qtdNoEstoque
     ){
         public static ProdutoResponseDTO valueOf(Produto produto) {
             return new ProdutoResponseDTO(
@@ -19,7 +17,6 @@ public record ProdutoResponseDTO(
                     produto.getDescricao(),
                     produto.getPreco(),
                     produto.getValor(),
-                    produto.getQtdNoEstoque(),
-                    produto.getTipo());
+                    produto.getQtdNoEstoque());
     }
 }

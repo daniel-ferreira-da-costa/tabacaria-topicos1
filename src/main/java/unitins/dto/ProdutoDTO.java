@@ -1,7 +1,5 @@
 package unitins.dto;
 
-import unitins.model.Tipo;
-
 public class ProdutoDTO{
 
     private final String nome;
@@ -9,15 +7,14 @@ public class ProdutoDTO{
     private final double valor;
     private final double preco;
     private final String descricao;
-    private final Tipo tipo;
+    
 //construtor
-    public ProdutoDTO(String nome, int qtdNoEstoque, double valor, double preco, String descricao, Tipo tipo) {
+    public ProdutoDTO(String nome, int qtdNoEstoque, double valor, double preco, String descricao) {
         this.nome = nome;
         this.qtdNoEstoque = qtdNoEstoque;
         this.valor = valor;
         this.preco = preco;
         this.descricao = descricao;
-        this.tipo = tipo;
     }
     
 //get
@@ -41,9 +38,6 @@ public class ProdutoDTO{
         return descricao;
     }
 
-    public Tipo getTipo() {
-        return tipo;
-    }
 //
     @Override
     public int hashCode() {
@@ -57,7 +51,6 @@ public class ProdutoDTO{
         temp = Double.doubleToLongBits(preco);
         result = prime * result + (int) (temp ^ (temp >>> 32));
         result = prime * result + ((descricao == null) ? 0 : descricao.hashCode());
-        result = prime * result + ((tipo == null) ? 0 : tipo.hashCode());
         return result;
     }
 
@@ -85,8 +78,6 @@ public class ProdutoDTO{
             if (other.descricao != null)
                 return false;
         } else if (!descricao.equals(other.descricao))
-            return false;
-        if (tipo != other.tipo)
             return false;
         return true;
     }

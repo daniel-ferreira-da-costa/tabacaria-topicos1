@@ -18,11 +18,8 @@ public class Produto extends DefaultEntity{
     @Column(nullable = false)
     private double preco;
 
-    @Column(length = 200, nullable = false)
+    @Column(length = 400, nullable = false)
     private String descricao;
-
-    @Column(nullable = true)
-    private Tipo tipo;
 
     //get e set
     public String getNome() {
@@ -63,17 +60,6 @@ public class Produto extends DefaultEntity{
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
-    }
-
-    public Tipo getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(Tipo tipo) {
-        this.tipo = tipo;
-    }
-    public void setTipo(int tipo) {
-        this.tipo = Tipo.valueOf(tipo);
     }
 
 }

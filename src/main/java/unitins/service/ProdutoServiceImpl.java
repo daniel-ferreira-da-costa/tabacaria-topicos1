@@ -25,7 +25,6 @@ public class ProdutoServiceImpl implements ProdutoService{
             novoProduto.setPreco(dto.getPreco());
             novoProduto.setValor(dto.getValor());
             novoProduto.setQtdNoEstoque(dto.getQtdNoEstoque());
-            novoProduto.setTipo(dto.getTipo());
 
         repository.persist(novoProduto);
 
@@ -43,7 +42,6 @@ public class ProdutoServiceImpl implements ProdutoService{
             Produto.setPreco(dto.getPreco());
             Produto.setValor(dto.getValor());
             Produto.setQtdNoEstoque(dto.getQtdNoEstoque());
-            Produto.setTipo(dto.getTipo());
         } else 
             throw new NotFoundException();
 
