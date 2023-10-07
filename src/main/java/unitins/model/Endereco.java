@@ -1,16 +1,23 @@
 package unitins.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Endereco extends DefaultEntity {
+    @Column(length = 60)
     private String nome;
+    @Column(length = 300)
     private String logradouro;
+    @Column(length = 5)
     private String numero;
+    @Column(length = 500)
     private String complemento;
+    @Column(length = 120)
     private String bairro;
+    @Column(length = 9)
     private String cep;
     @ManyToOne
     @JoinColumn(name = "id_cidade")

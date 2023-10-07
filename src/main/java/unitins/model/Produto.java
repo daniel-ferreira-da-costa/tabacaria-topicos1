@@ -6,19 +6,19 @@ import jakarta.persistence.Entity;
 @Entity
 public class Produto extends DefaultEntity{
     
-    @Column(length = 60, nullable = false)
+    @Column(length = 60)
     private String nome;
 
-    @Column(nullable = false)
+    @Column(length = 60)
     private int qtdNoEstoque;
 
-    @Column(nullable = false)
+    @Column(length = 60)
     private double valor;
     
-    @Column(nullable = false)
+    @Column(length = 60)
     private double preco;
 
-    @Column(length = 400, nullable = false)
+    @Column(length = 400)
     private String descricao;
 
     //get e set

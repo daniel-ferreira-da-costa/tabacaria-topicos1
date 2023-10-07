@@ -1,16 +1,22 @@
 package unitins.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.OneToOne;
+import jakarta.validation.constraints.Size;
 
 @Entity
 public class Pessoa extends DefaultEntity{
-
+    @Column(length = 60)
     private String nome;
+    @Column(length = 60)
     private String email;
+    @Column(length = 60)
     private String cpf;
+    @Column(length = 15)
+    @Size(min = 4, max = 15)
     private String senha;
 
     @OneToOne
