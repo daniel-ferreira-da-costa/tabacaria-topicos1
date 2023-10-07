@@ -1,6 +1,8 @@
 package unitins.resource;
 
-
+import unitins.dto.EnderecoDTO;
+import unitins.dto.EnderecoResponseDTO;
+import unitins.service.EnderecoService;
 
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
@@ -17,29 +19,25 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.Response.Status;
 
-import unitins.dto.EstadoDTO;
-import unitins.dto.EstadoResponseDTO;
-import unitins.service.EstadoService;
 
-@Path("/estados")
+@Path("/enderecos")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-public class EstadoResource {
-
+public class EnderecoResource {
+    
     @Inject
-    EstadoService service;
+    EnderecoService service;
 
     @POST
-    public Response insert(@Valid EstadoDTO dto) {
-        EstadoResponseDTO retorno = service.insert(dto);
-        //return Response.status(Status.CREATED).entity(retorno).build();
+    public Response insert(@Valid EnderecoDTO dto) {
+        EnderecoResponseDTO retorno = service.insert(dto);
         return Response.status(201).entity(retorno).build();
     }
 
     @PUT
     @Transactional
     @Path("/{id}")
-    public Response update(EstadoDTO dto, @PathParam("id") Long id) {
+    public Response update(EnderecoDTO dto, @PathParam("id") Long id) {
         service.update(dto, id);
         return Response.status(Status.NO_CONTENT).build();
     }
@@ -62,7 +60,7 @@ public class EstadoResource {
     public Response findById(@PathParam("id") Long id) {
         return Response.ok(service.findById(id)).build();
     }
-    
+
     @GET
     @Path("/search/nome/{nome}")
     public Response findByNome(@PathParam("nome") String nome) {

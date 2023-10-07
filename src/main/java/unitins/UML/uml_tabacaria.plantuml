@@ -45,16 +45,8 @@ class Endereco {
     - numero: String
     - complemento: String
     - cep: String
-}
-class Estado{
-    - id: Long
-    - nome: String
-    - sigla: String
-}
-
-class Cidade{
-    - id: Long
-    - nome: String
+    - cidade: String
+    - estado: String
 }
 
 '========Relacionamentos========='
@@ -68,8 +60,5 @@ Pessoa "1" *--> "1" Telefone : Principal
 Pessoa "1" *--> "1" Telefone : WhatsApp
 Pessoa "1" *--> "1" Endereco : Principal
 Pessoa "1" *--> "1" Endereco : Reserva
-
-Endereco "*" *--> "1" Cidade
-Cidade "*" *--> "1" Estado
 
 @enduml

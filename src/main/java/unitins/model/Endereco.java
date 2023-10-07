@@ -2,11 +2,10 @@ package unitins.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Endereco extends DefaultEntity {
+    
     @Column(length = 60)
     private String nome;
     @Column(length = 300)
@@ -19,9 +18,10 @@ public class Endereco extends DefaultEntity {
     private String bairro;
     @Column(length = 9)
     private String cep;
-    @ManyToOne
-    @JoinColumn(name = "id_cidade")
-    private Cidade cidade;
+    @Column(length = 60)
+    private String cidade;
+    @Column(length = 60)
+    private String estado;
 
 
     //gets e sets
@@ -61,11 +61,18 @@ public class Endereco extends DefaultEntity {
     public void setCep(String cep) {
         this.cep = cep;
     }
-    public Cidade getCidade() {
+    public String getCidade() {
         return cidade;
     }
-    public void setCidade(Cidade cidade) {
+    public void setCidade(String cidade) {
         this.cidade = cidade;
     }
+    public String getEstado() {
+        return estado;
+    }
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+    
 
 }
