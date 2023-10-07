@@ -14,7 +14,7 @@ class Usuario{
     - id: Long
     - senha: String
     - login: String
-    - email: String
+    
 }
 
 class Telefone {
@@ -23,6 +23,12 @@ class Telefone {
     - numero: String
 }
 
+class Pessoa {
+    - id: Long
+    - nome: String
+    - email: String
+    - dataAniversario: date
+}
 '========Venda========='
 class Compra {
     - id: Long
@@ -64,8 +70,11 @@ Compra "*" --> "1" Endereco
 
 ItemCompra "*" --> "1" Produto
 
-Usuario "1" *--> "1" Telefone
-Usuario "1" *--> "*" Endereco
+Pessoa "1" *--> "1" Telefone : Principal
+Pessoa "1" *--> "1" Telefone : Reserva
+Pessoa "1" *--> "1" Endereco : Principal
+Pessoa "1" *--> "1" Endereco : Reserva
+Usuario "1" *--> "1" Pessoa
 
 Endereco "*" *--> "1" Cidade
 Cidade "*" *--> "1" Estado

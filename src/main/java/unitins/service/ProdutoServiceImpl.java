@@ -35,17 +35,17 @@ public class ProdutoServiceImpl implements ProdutoService{
     @Transactional
     public ProdutoResponseDTO update(ProdutoDTO dto, Long id) {
         
-        Produto Produto = repository.findById(id);
-        if (Produto != null) {
-            Produto.setNome(dto.getNome());
-            Produto.setDescricao(dto.getDescricao());
-            Produto.setPreco(dto.getPreco());
-            Produto.setValor(dto.getValor());
-            Produto.setQtdNoEstoque(dto.getQtdNoEstoque());
+        Produto produto = repository.findById(id);
+        if (produto != null) {
+            produto.setNome(dto.getNome());
+            produto.setDescricao(dto.getDescricao());
+            produto.setPreco(dto.getPreco());
+            produto.setValor(dto.getValor());
+            produto.setQtdNoEstoque(dto.getQtdNoEstoque());
         } else 
             throw new NotFoundException();
 
-        return ProdutoResponseDTO.valueOf(Produto);
+        return ProdutoResponseDTO.valueOf(produto);
     }
 
     @Override
@@ -63,13 +63,13 @@ public class ProdutoServiceImpl implements ProdutoService{
     @Override
     public List<ProdutoResponseDTO> findByNome(String nome) {
         return repository.findByNome(nome).stream()
-            .map(e -> ProdutoResponseDTO.valueOf(e)).toList();
+            .map(p -> ProdutoResponseDTO.valueOf(p)).toList();
     }
 
     @Override
     public List<ProdutoResponseDTO> findByAll() {
         return repository.listAll().stream()
-            .map(e -> ProdutoResponseDTO.valueOf(e)).toList();
+            .map(p -> ProdutoResponseDTO.valueOf(p)).toList();
     }
     
 }

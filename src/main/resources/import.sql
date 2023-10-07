@@ -39,3 +39,61 @@ INSERT INTO usuario_whatsapp (id_usuario, id_whatsapp) VALUES
     (2, 6),  
     (3, 7),  
     (4, 8);
+
+INSERT INTO estado (sigla, nome) VALUES
+    ('AC', 'Acre'),
+    ('AL', 'Alagoas'),
+    ('AP', 'Amapá'),
+    ('AM', 'Amazonas'),
+    ('BA', 'Bahia'),
+    ('CE', 'Ceará'),
+    ('DF', 'Distrito Federal'),
+    ('ES', 'Espírito Santo'),
+    ('GO', 'Goiás'),
+    ('MA', 'Maranhão'),
+    ('MT', 'Mato Grosso'),
+    ('MS', 'Mato Grosso do Sul'),
+    ('MG', 'Minas Gerais'),
+    ('PA', 'Pará'),
+    ('PB', 'Paraíba'),
+    ('PR', 'Paraná'),
+    ('PE', 'Pernambuco'),
+    ('PI', 'Piauí'),
+    ('RJ', 'Rio de Janeiro'),
+    ('RN', 'Rio Grande do Norte'),
+    ('RS', 'Rio Grande do Sul'),
+    ('RO', 'Rondônia'),
+    ('RR', 'Roraima'),
+    ('SC', 'Santa Catarina'),
+    ('SP', 'São Paulo'),
+    ('SE', 'Sergipe'),
+    ('TO', 'Tocantins');
+
+INSERT INTO cidade (id_estado, nome) VALUES
+    (1, 'Rio Branco'), -- Acre (AC)
+    (2, 'Maceió'), -- Alagoas (AL)
+    (3, 'Macapá'), -- Amapá (AP)
+    (4, 'Manaus'), -- Amazonas (AM)
+    (5, 'Salvador'), -- Bahia (BA)
+    (6, 'Fortaleza'), -- Ceará (CE)
+    (7, 'Brasília'), -- Distrito Federal (DF)
+    (8, 'Vitória'), -- Espírito Santo (ES)
+    (9, 'Goiânia'), -- Goiás (GO)
+    (10, 'São Luís'), -- Maranhão (MA)
+    (11, 'Cuiabá'), -- Mato Grosso (MT)
+    (12, 'Campo Grande'), -- Mato Grosso do Sul (MS)
+    (13, 'Belo Horizonte'), -- Minas Gerais (MG)
+    (14, 'Belém'), -- Pará (PA)
+    (15, 'João Pessoa'), -- Paraíba (PB)
+    (16, 'Curitiba'), -- Paraná (PR)
+    (17, 'Recife'), -- Pernambuco (PE)
+    (18, 'Teresina'), -- Piauí (PI)
+    (19, 'Rio de Janeiro'), -- Rio de Janeiro (RJ)
+    (20, 'Natal'), -- Rio Grande do Norte (RN)
+    (21, 'Porto Alegre'), -- Rio Grande do Sul (RS)
+    (22, 'Porto Velho'), -- Rondônia (RO)
+    (23, 'Boa Vista'), -- Roraima (RR)
+    (24, 'Florianópolis'), -- Santa Catarina (SC)
+    (25, 'São Paulo'), -- São Paulo (SP)
+    (26, 'Aracaju'), -- Sergipe (SE)
+    (27, 'Palmas'); -- Tocantins (TO)
