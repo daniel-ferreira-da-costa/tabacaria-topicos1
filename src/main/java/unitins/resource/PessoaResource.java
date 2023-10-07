@@ -14,26 +14,26 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.Response.Status;
-import unitins.dto.UsuarioDTO;
-import unitins.service.UsuarioService;
+import unitins.dto.PessoaDTO;
+import unitins.service.PessoaService;
 
-@Path("/usuarios")
+@Path("/Pessoas")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-public class UsuarioResource {
+public class PessoaResource {
 
     @Inject
-    UsuarioService service;
+    PessoaService service;
 
     @POST
-    public Response insert(UsuarioDTO dto) throws Exception {
+    public Response insert(PessoaDTO dto) throws Exception {
        return Response.status(Status.CREATED).entity(service.insert(dto)).build();
     }
 
     @PUT
     @Transactional
     @Path("/{id}")
-    public Response update(UsuarioDTO dto, @PathParam("id") Long id) {
+    public Response update(PessoaDTO dto, @PathParam("id") Long id) {
         service.update(dto, id);
         return Response.noContent().build();
     }

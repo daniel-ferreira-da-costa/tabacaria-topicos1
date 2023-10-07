@@ -13,33 +13,6 @@ VALUES
     ('Mangueira Diamond Crush', 'A Mangueira Diamond Crush é um verdadeiro diamante entre as mangueiras de hookah. Com seu design luxuoso e ponta brilhante, ela combina estilo e funcionalidade. Desfrute de fumaça suave e refrescante enquanto adiciona um toque de glamour à sua sessão de narguilé.', 30, 24.99, 39.99),
     ('Bowl Fusion Rainbow', 'O Bowl Fusion Rainbow é a peça central perfeita para sua sessão de hookah. Sua construção de cerâmica de alta qualidade permite que você desfrute de sabores puros e intensos. Além disso, seu visual arco-íris adiciona um toque de cor e alegria à sua experiência de fumar.', 25, 14.99, 29.99);
 
-INSERT INTO telefone (codigoArea, numero) VALUES
-    ('63', '1111-1111'),
-    ('62', '2222-2222'),
-    ('61', '3333-3333'),
-    ('55', '4444-4444'),
-    ('63', '5555-5555'),
-    ('62', '6666-6666'),
-    ('61', '7777-7777'),
-    ('55', '8888-8888');
-INSERT INTO usuario (nome, login, senha) VALUES
-    ('Daniel', 'jacare', '333'),
-    ('Andre', 'bene', '444'),
-    ('Hirosh', 'labosta', '555'),
-    ('Giovanna', 'gih', '666');
-
-INSERT INTO usuario_telefone (id_usuario, id_telefone) VALUES
-    (1, 1),
-    (2, 2),  
-    (3, 3),  
-    (4, 4);
-
-INSERT INTO usuario_whatsapp (id_usuario, id_whatsapp) VALUES
-    (1, 5),
-    (2, 6),  
-    (3, 7),  
-    (4, 8);
-
 INSERT INTO estado (sigla, nome) VALUES
     ('AC', 'Acre'),
     ('AL', 'Alagoas'),
@@ -97,3 +70,55 @@ INSERT INTO cidade (id_estado, nome) VALUES
     (25, 'São Paulo'), -- São Paulo (SP)
     (26, 'Aracaju'), -- Sergipe (SE)
     (27, 'Palmas'); -- Tocantins (TO)
+
+INSERT INTO pessoa(cpf, email, nome, senha)
+VALUES
+  ('123.456.789-01', 'jacare@example.com', 'jacare', 'senha1'),
+  ('987.654.321-09', 'bene@example.com', 'bene', 'senha2'),
+  ('456.789.012-34', 'labosta@example.com', 'labosta', 'senha3'),
+  ('234.567.890-12', 'gih@example.com', 'gih', 'senha4');
+
+INSERT INTO endereco( id_cidade, bairro, cep, complemento, logradouro, nome, numero)
+VALUES
+  (1, 'Bairro 1', '12345-678', 'Complemento 1', 'Rua 1', 'Casa 1', '123'),
+  (2, 'Bairro 2', '23456-789', 'Complemento 2', 'Rua 2', 'Casa 2', '456'),
+  (3, 'Bairro 3', '34567-890', 'Complemento 3', 'Rua 3', 'Casa 3', '789'),
+  (4, 'Bairro 4', '45678-901', 'Complemento 4', 'Rua 4', 'Casa 4', '101'),
+  (5, 'Bairro 5', '56789-012', 'Complemento 5', 'Rua 5', 'Casa 5', '202'),
+  (6, 'Bairro 6', '67890-123', 'Complemento 6', 'Rua 6', 'Casa 6', '111'),
+  (7, 'Bairro 7', '78901-234', 'Complemento 7', 'Rua 7', 'Casa 7', '222'),
+  (8, 'Bairro 8', '89012-345', 'Complemento 8', 'Rua 8', 'Casa 8', '333');
+
+INSERT INTO pessoa_enderecoprincipal(id_enderecoprincipal, id_pessoa) VALUES 
+(5, 1),
+(6, 2),
+(7, 3),
+(8, 4);
+
+INSERT INTO pessoa_enderecoreserva (id_enderecoreserva, id_pessoa) VALUES 
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4);
+
+INSERT INTO telefone (codigoArea, numero) VALUES
+    ('63', '1111-1111'),
+    ('62', '2222-2222'),
+    ('61', '3333-3333'),
+    ('55', '4444-4444'),
+    ('63', '5555-5555'),
+    ('62', '6666-6666'),
+    ('61', '7777-7777'),
+    ('55', '8888-8888');
+
+INSERT INTO pessoa_telefone (id_pessoa, id_telefone) VALUES 
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4);
+
+INSERT INTO pessoa_whatsapp (id_pessoa, id_whatsapp) VALUES 
+(1, 5),
+(2, 6),
+(3, 7),
+(4, 8);

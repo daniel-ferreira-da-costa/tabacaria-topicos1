@@ -20,11 +20,11 @@ public class ProdutoServiceImpl implements ProdutoService{
     @Transactional
     public ProdutoResponseDTO insert(ProdutoDTO dto) {
         Produto novoProduto = new Produto();
-            novoProduto.setNome(dto.getNome());
-            novoProduto.setDescricao(dto.getDescricao());
-            novoProduto.setPreco(dto.getPreco());
-            novoProduto.setValor(dto.getValor());
-            novoProduto.setQtdNoEstoque(dto.getQtdNoEstoque());
+            novoProduto.setNome(dto.nome());
+            novoProduto.setDescricao(dto.descricao());
+            novoProduto.setPreco(dto.preco());
+            novoProduto.setValor(dto.valor());
+            novoProduto.setQtdNoEstoque(dto.qtdNoEstoque());
 
         repository.persist(novoProduto);
 
@@ -37,11 +37,11 @@ public class ProdutoServiceImpl implements ProdutoService{
         
         Produto produto = repository.findById(id);
         if (produto != null) {
-            produto.setNome(dto.getNome());
-            produto.setDescricao(dto.getDescricao());
-            produto.setPreco(dto.getPreco());
-            produto.setValor(dto.getValor());
-            produto.setQtdNoEstoque(dto.getQtdNoEstoque());
+            produto.setNome(dto.nome());
+            produto.setDescricao(dto.descricao());
+            produto.setPreco(dto.preco());
+            produto.setValor(dto.valor());
+            produto.setQtdNoEstoque(dto.qtdNoEstoque());
         } else 
             throw new NotFoundException();
 
