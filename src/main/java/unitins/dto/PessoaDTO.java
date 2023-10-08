@@ -1,25 +1,26 @@
 package unitins.dto;
 
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import unitins.model.Endereco;
 import unitins.model.Pessoa;
 import unitins.model.Telefone;
 
 public record PessoaDTO(
-    @NotNull(message = "O campo nome nao pode ser nulo.")
+    @NotBlank(message = "insira o nome corretamente")
     String nome,
-    @NotNull(message = "O campo email nao pode ser nulo.")
+    @NotBlank(message = "insira o email corretamente")
     String email,
-    @NotNull(message = "O campo cpf nao pode ser nulo.")
+    @NotBlank(message = "insira o cpf corretamente")
     String cpf,
-    @NotNull(message = "O campo senha nao pode ser nulo.")
+    @NotBlank(message = "insira a senha corretamente")
     String senha,
-    @NotBlank(message = "O campo endereco nao pode ficar vazio")
+    @NotBlank(message = "insira o enderecoPrincipal corretamente")
     Endereco ederecoPrincipal,
+    @NotBlank(message = "insira o enderecoReserva corretamente")
     Endereco enderecoReserva,
-    @NotBlank(message = "O campo telefone nao pode ficar vazio")
+    @NotBlank(message = "insira o telefone corretamente")
     Telefone telefone,
+    @NotBlank(message = "insira o whatsapp corretamente")
     Telefone whatsapp
 ) {
     public static PessoaDTO valueOf(Pessoa pessoa){

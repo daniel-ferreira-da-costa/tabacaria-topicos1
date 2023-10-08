@@ -1,19 +1,18 @@
 package unitins.dto;
 
+import jakarta.validation.constraints.NotBlank;
 import unitins.model.Produto;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 public record ProdutoDTO(
-    @NotNull(message = "o campo nome nao pode ser nulo")
+    @NotBlank(message = "insira o nome corretamente")
     String nome,
-    @NotNull(message = "o campo qtdNoEstoque nao pode ser nulo")
+    @NotBlank(message = "insira a qtdNoEstoque corretamente")
     int qtdNoEstoque,
-    @NotNull(message = "o campo valor nao pode ser nulo")
+    @NotBlank(message = "insira o valor corretamente")
     double valor,
-    @NotNull(message = "o campo preco nao pode ser nulo")
+    @NotBlank(message = "insira o preco corretamente")
     double preco,
-    @NotBlank(message = "o campo descricao nao pode ficar vazio")
+    @NotBlank(message = "insira a descrição corretamente")
     String descricao
 ){ 
     public ProdutoDTO valueOf(Produto produto){
