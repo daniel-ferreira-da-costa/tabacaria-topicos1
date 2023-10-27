@@ -22,7 +22,7 @@ public record PessoaResponseDTO (
             pessoa.getEmail(), 
             pessoa.getCpf(),
             pessoa.getSenha(),
-            pessoa.getEderecoPrincipal(),
+            pessoa.getEnderecoPrincipal(),
             pessoa.getEnderecoReserva(),
             pessoa.getTelefone(),
             pessoa.getWhatsapp()

@@ -21,19 +21,17 @@ public class PessoaServiceImpl implements PessoaService {
     @Transactional
     public PessoaResponseDTO insert(PessoaDTO dto) throws Exception {
 
-        if (repository.findByEmail(dto.email()) != null) {
+        if (repository.findByEmail(dto.getEmail()) != null) {
             throw new Exception("Email já existe.");
         }
 
         Pessoa novaPessoa = new Pessoa();
-        novaPessoa.setNome(dto.nome());
-        novaPessoa.setCpf(dto.cpf());
-        novaPessoa.setEmail(dto.email());
-        novaPessoa.setSenha(dto.senha());
-        novaPessoa.setEderecoPrincipal(dto.ederecoPrincipal());
-        novaPessoa.setEnderecoReserva(dto.enderecoReserva());
-        novaPessoa.setTelefone(dto.telefone());
-        novaPessoa.setWhatsapp(dto.whatsapp());
+        novaPessoa.setNome(dto.getNome());
+        novaPessoa.setCpf(dto.getCpf());
+        novaPessoa.setEmail(dto.getEmail());
+        novaPessoa.setSenha(dto.getSenha());
+        novaPessoa.setEnderecoPrincipal(dto.getEnderecoPrincipal());
+        novaPessoa.setTelefone(dto.getTelefone());
 
         repository.persist(novaPessoa);
 
@@ -45,14 +43,12 @@ public class PessoaServiceImpl implements PessoaService {
     public PessoaResponseDTO update(PessoaDTO dto, Long id) {
         Pessoa Pessoa = repository.findById(id);
         if (Pessoa != null) {
-            Pessoa.setNome(dto.nome());
-            Pessoa.setCpf(dto.cpf());
-            Pessoa.setEmail(dto.email());
-            Pessoa.setSenha(dto.senha());
-            Pessoa.setEderecoPrincipal(dto.ederecoPrincipal());
-            Pessoa.setEnderecoReserva(dto.enderecoReserva());
-            Pessoa.setTelefone(dto.telefone());
-            Pessoa.setWhatsapp(dto.whatsapp());
+            Pessoa.setNome(dto.getNome());
+            Pessoa.setCpf(dto.getCpf());
+            Pessoa.setEmail(dto.getEmail());
+            Pessoa.setSenha(dto.getSenha());
+            Pessoa.setEnderecoPrincipal(dto.getEnderecoPrincipal());
+            Pessoa.setTelefone(dto.getTelefone());
         } else
             throw new NotFoundException();
         return PessoaResponseDTO.valueOf(Pessoa);

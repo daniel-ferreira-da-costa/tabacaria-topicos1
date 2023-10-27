@@ -2,37 +2,60 @@ package unitins.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import unitins.model.Endereco;
-import unitins.model.Pessoa;
 import unitins.model.Telefone;
 
-public record PessoaDTO(
+public class PessoaDTO{
     @NotBlank(message = "insira o nome corretamente")
-    String nome,
+    String nome;
     @NotBlank(message = "insira o email corretamente")
-    String email,
+    String email;
     @NotBlank(message = "insira o cpf corretamente")
-    String cpf,
+    String cpf;
     @NotBlank(message = "insira a senha corretamente")
-    String senha,
+    String senha;
     @NotBlank(message = "insira o enderecoPrincipal corretamente")
-    Endereco ederecoPrincipal,
-    @NotBlank(message = "insira o enderecoReserva corretamente")
-    Endereco enderecoReserva,
+    Endereco enderecoPrincipal;
     @NotBlank(message = "insira o telefone corretamente")
-    Telefone telefone,
-    @NotBlank(message = "insira o whatsapp corretamente")
-    Telefone whatsapp
-) {
-    public static PessoaDTO valueOf(Pessoa pessoa){
-        return new PessoaDTO(
-            pessoa.getNome(), 
-            pessoa.getEmail(), 
-            pessoa.getCpf(),
-            pessoa.getSenha(),
-            pessoa.getEderecoPrincipal(),
-            pessoa.getEnderecoReserva(),
-            pessoa.getTelefone(),
-            pessoa.getWhatsapp()
-        );
+    Telefone telefone;
+
+    public PessoaDTO(@NotBlank(message = "insira o nome corretamente") String nome,
+            @NotBlank(message = "insira o email corretamente") String email,
+            @NotBlank(message = "insira o cpf corretamente") String cpf,
+            @NotBlank(message = "insira a senha corretamente") String senha,
+            @NotBlank(message = "insira o enderecoPrincipal corretamente") Endereco enderecoPrincipal,
+            @NotBlank(message = "insira o telefone corretamente") Telefone telefone) {
+        this.nome = nome;
+        this.email = email;
+        this.cpf = cpf;
+        this.senha = senha;
+        this.enderecoPrincipal = enderecoPrincipal;
+        this.telefone = telefone;
     }
+
+
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public Endereco getEnderecoPrincipal() {
+        return enderecoPrincipal;
+    }
+
+    public Telefone getTelefone() {
+        return telefone;
+    }
+
 }

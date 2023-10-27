@@ -8,7 +8,7 @@ import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.Size;
 
 @Entity
-public class Pessoa extends DefaultEntity{
+public class Pessoa extends DefaultEntity {
     @Column(length = 60)
     private String nome;
     @Column(length = 60)
@@ -20,28 +20,19 @@ public class Pessoa extends DefaultEntity{
     private String senha;
 
     @OneToOne
-    @JoinTable(name="pessoa_enderecoPrincipal",
-        joinColumns= @JoinColumn(name="id_pessoa"),
-        inverseJoinColumns = @JoinColumn(name="id_enderecoPrincipal") )
-    private Endereco ederecoPrincipal;
-
+    @JoinTable(name = "pessoa_enderecoPrincipal", joinColumns = @JoinColumn(name = "id_pessoa"), inverseJoinColumns = @JoinColumn(name = "id_enderecoPrincipal"))
+    private Endereco enderecoPrincipal;
 
     @OneToOne
-    @JoinTable(name="pessoa_enderecoReserva",
-        joinColumns= @JoinColumn(name="id_pessoa"),
-        inverseJoinColumns = @JoinColumn(name="id_enderecoReserva") )
+    @JoinTable(name = "pessoa_enderecoReserva", joinColumns = @JoinColumn(name = "id_pessoa"), inverseJoinColumns = @JoinColumn(name = "id_enderecoReserva"))
     private Endereco enderecoReserva;
-    
+
     @OneToOne
-    @JoinTable(name="pessoa_telefone",
-        joinColumns= @JoinColumn(name="id_pessoa"),
-        inverseJoinColumns = @JoinColumn(name="id_telefone") )
+    @JoinTable(name = "pessoa_telefone", joinColumns = @JoinColumn(name = "id_pessoa"), inverseJoinColumns = @JoinColumn(name = "id_telefone"))
     private Telefone telefone;
 
     @OneToOne
-    @JoinTable(name="pessoa_whatsapp",
-        joinColumns= @JoinColumn(name="id_pessoa"),
-        inverseJoinColumns = @JoinColumn(name="id_whatsapp") )
+    @JoinTable(name = "pessoa_whatsapp", joinColumns = @JoinColumn(name = "id_pessoa"), inverseJoinColumns = @JoinColumn(name = "id_whatsapp"))
     private Telefone whatsapp;
 
     ///////////
@@ -85,12 +76,12 @@ public class Pessoa extends DefaultEntity{
         this.whatsapp = whatsapp;
     }
 
-    public Endereco getEderecoPrincipal() {
-        return ederecoPrincipal;
+    public Endereco getEnderecoPrincipal() {
+        return enderecoPrincipal;
     }
 
-    public void setEderecoPrincipal(Endereco ederecoPrincipal) {
-        this.ederecoPrincipal = ederecoPrincipal;
+    public void setEnderecoPrincipal(Endereco enderecoPrincipal) {
+        this.enderecoPrincipal = enderecoPrincipal;
     }
 
     public Endereco getEnderecoReserva() {
