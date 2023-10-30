@@ -15,11 +15,10 @@ public class ProdutoRepository implements PanacheRepository<Produto>{
 
     public Produto findById(Long id) {
         try {
-            return find("id = ?1) ", id).singleResult();
-        } catch (NoResultException p) {
-            p.printStackTrace();
+            return find("id = ?1", id).singleResult();
+        } catch (NoResultException e) {
+            e.printStackTrace();
             return null;
         }
-        
     }
 }

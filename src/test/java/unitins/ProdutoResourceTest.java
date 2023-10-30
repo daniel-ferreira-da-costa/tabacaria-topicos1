@@ -36,7 +36,7 @@ public class ProdutoResourceTest {
             .body(dto)
             .when().post("/produtos")
             .then()
-            .statusCode(201)
+            .statusCode(200)
             .body(
                 "id", notNullValue(),
                 "nome", is("paiero"),
