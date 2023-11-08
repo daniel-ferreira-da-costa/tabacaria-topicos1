@@ -18,12 +18,7 @@ public class PessoaDTO{
     @NotBlank(message = "insira o telefone corretamente")
     Telefone telefone;
 
-    public PessoaDTO(@NotBlank(message = "insira o nome corretamente") String nome,
-            @NotBlank(message = "insira o email corretamente") String email,
-            @NotBlank(message = "insira o cpf corretamente") String cpf,
-            @NotBlank(message = "insira a senha corretamente") String senha,
-            @NotBlank(message = "insira o enderecoPrincipal corretamente") Endereco enderecoPrincipal,
-            @NotBlank(message = "insira o telefone corretamente") Telefone telefone) {
+    public PessoaDTO(String nome, String email, String cpf, String senha, Endereco enderecoPrincipal, Telefone telefone) {
         this.nome = nome;
         this.email = email;
         this.cpf = cpf;

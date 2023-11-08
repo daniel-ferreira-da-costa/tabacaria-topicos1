@@ -13,10 +13,10 @@ public class Produto extends DefaultEntity{
     private int qtdNoEstoque;
 
     @Column(length = 60)
-    private double valor;
+    private Double valor;
     
     @Column(length = 60)
-    private double preco;
+    private Double preco;
 
     @Column(length = 400)
     private String descricao;

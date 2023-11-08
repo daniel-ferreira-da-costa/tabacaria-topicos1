@@ -17,7 +17,7 @@ import jakarta.ws.rs.core.Response.Status;
 import unitins.dto.PessoaDTO;
 import unitins.service.PessoaService;
 
-@Path("/Pessoas")
+@Path("/pessoas")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class PessoaResource {

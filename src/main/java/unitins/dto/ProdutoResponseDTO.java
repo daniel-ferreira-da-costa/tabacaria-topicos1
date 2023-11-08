@@ -6,8 +6,8 @@ public record ProdutoResponseDTO(
     Long id,
     String nome,
     String descricao,
-    double valor,
-    double preco,
+    Double valor,
+    Double preco,
     int qtdNoEstoque
     ){
         public static ProdutoResponseDTO valueOf(Produto produto) {
