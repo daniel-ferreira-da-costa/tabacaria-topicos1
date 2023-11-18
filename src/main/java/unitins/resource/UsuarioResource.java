@@ -1,6 +1,7 @@
 package unitins.resource;
 
-
+import unitins.dto.UsuarioDTO;
+import unitins.service.UsuarioService;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.Consumes;
@@ -14,26 +15,26 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.Response.Status;
-import unitins.dto.PessoaDTO;
-import unitins.service.PessoaService;
 
-@Path("/pessoas")
+
+
+@Path("/usuarios")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-public class PessoaResource {
+public class UsuarioResource {
 
     @Inject
-    PessoaService service;
+    UsuarioService service;
 
     @POST
-    public Response insert(PessoaDTO dto) throws Exception {
-       return Response.status(Status.CREATED).entity(service.insert(dto)).build();
+    public Response insert(UsuarioDTO dto) {
+        return Response.status(Status.CREATED).entity(service.insert(dto)).build();
     }
 
     @PUT
     @Transactional
     @Path("/{id}")
-    public Response update(PessoaDTO dto, @PathParam("id") Long id) {
+    public Response update(UsuarioDTO dto, @PathParam("id") Long id) {
         service.update(dto, id);
         return Response.noContent().build();
     }
@@ -56,7 +57,7 @@ public class PessoaResource {
     public Response findById(@PathParam("id") Long id) {
         return Response.ok(service.findById(id)).build();
     }
-    
+
     @GET
     @Path("/search/nome/{nome}")
     public Response findByNome(@PathParam("nome") String nome) {

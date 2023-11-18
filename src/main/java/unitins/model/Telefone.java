@@ -1,15 +1,10 @@
 package unitins.model;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.validation.constraints.Size;
 
 @Entity
 public class Telefone extends DefaultEntity {
-    @Column(length = 2)
-    @Size(max = 2)
     private String codigoArea;
-    @Column(length = 10)
     private String numero;
 
     public String getCodigoArea() {

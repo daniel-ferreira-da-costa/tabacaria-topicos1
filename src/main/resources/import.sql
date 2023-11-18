@@ -14,12 +14,10 @@ VALUES
     ('Bowl Fusion Rainbow', 'O Bowl Fusion Rainbow é a peça central perfeita para sua sessão de hookah. Sua construção de cerâmica de alta qualidade permite que você desfrute de sabores puros e intensos. Além disso, seu visual arco-íris adiciona um toque de cor e alegria à sua experiência de fumar.', 25, 14.99, 29.99);
 
 
-INSERT INTO pessoa(cpf, email, nome, senha)
+INSERT INTO usuario (nome, login, senha, perfil) 
 VALUES
-  ('123.456.789-01', 'jacare@example.com', 'jacare', 'senha1'),
-  ('987.654.321-09', 'bene@example.com', 'bene', 'senha2'),
-  ('456.789.012-34', 'labosta@example.com', 'labosta', 'senha3'),
-  ('234.567.890-12', 'gih@example.com', 'gih', 'senha4');
+    ('Daniel', 'jacare', 'yEaSZv1mx2Hf11tomtEAY3HUG2hrQS2ACE17U1PeCoA7PFIhHARbDredPke5UTKwvMVA+jod2rMVKSoDzm8p3Q==', 1);
+    ('Bill Gates', 'gates', 'yEaSZv1mx2Hf11tomtEAY3HUG2hrQS2ACE17U1PeCoA7PFIhHARbDredPke5UTKwvMVA+jod2rMVKSoDzm8p3Q==', 2);
 
 INSERT INTO endereco(numero, cep, cidade, estado, nome, bairro, logradouro, complemento) VALUES
     (123, '12345-678', 'São Paulo', 'SP', 'Endereço 1', 'Centro', 'Rua Principal', 'Apartamento 101'),
